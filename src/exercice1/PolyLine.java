@@ -4,13 +4,14 @@ public class PolyLine {
 	
 	private int m_nbPts;
 	
-	private final int NMAXPTS = 10;
+	private final int m_nbMaxPts;
 	private final Point[] m_points;
 	// Question 1:
-	// The max number of points should be store in as a constant in order to provide information about this value and be able to use it in different parts of the code 
+	// The max number of points should not be store in a static field to allow each instance to have a different capacity
 	
-	public PolyLine() {
-		m_points = new Point[NMAXPTS];
+	public PolyLine(int nbMaxPts) {
+		m_nbMaxPts = nbMaxPts;
+		m_points = new Point[m_nbMaxPts];
 		m_nbPts=0;
 	}
 	
@@ -23,7 +24,7 @@ public class PolyLine {
 		// if we exceed the number max of point, it will throw an exception
 		
 		//Question 4:
-		if(m_nbPts < NMAXPTS) {
+		if(m_nbPts < m_nbMaxPts) {
 			m_points[m_nbPts] = pt;
 			m_nbPts++;
 		}
@@ -39,7 +40,7 @@ public class PolyLine {
 	 * @return number max of points
 	 */
 	public int pointCapacity() {
-		return NMAXPTS;
+		return m_nbMaxPts;
 	}
 	
 	/**
