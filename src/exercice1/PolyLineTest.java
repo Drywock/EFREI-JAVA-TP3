@@ -13,7 +13,7 @@ public class PolyLineTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		PolyLine p = new PolyLine();
+		PolyLine p = new PolyLine(5);
 		Point pt = new Point(1,2);
 		
 		
