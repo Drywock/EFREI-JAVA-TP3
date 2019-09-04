@@ -1,5 +1,12 @@
 package exercice1;
 
+/**
+ * @author Thomas LINTANF,  Gabriel RIBIER
+ *
+ */
+
+import java.util.Arrays;
+
 public class PolyLine {
 	
 	private int m_nbPts;
@@ -67,4 +74,40 @@ public class PolyLine {
 		
 		//if arg pt = null return true if array not full else return false
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + m_nbMaxPts;
+		result = prime * result + m_nbPts;
+		result = prime * result + Arrays.hashCode(m_points);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PolyLine other = (PolyLine) obj;
+		if (m_nbMaxPts != other.m_nbMaxPts)
+			return false;
+		if (m_nbPts != other.m_nbPts)
+			return false;
+		if (!Arrays.equals(m_points, other.m_points))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "PolyLine [m_nbPts=" + m_nbPts + ", m_nbMaxPts=" + m_nbMaxPts + ", m_points=" + Arrays.toString(m_points)
+				+ "]";
+	}
+	
+	
 }

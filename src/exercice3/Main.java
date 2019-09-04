@@ -4,7 +4,7 @@
 package exercice3;
 
 /**
- * @author Gabriel RIBIER
+ * @author Gabriel RIBIER, Thomas LINTANF
  *
  */
 
